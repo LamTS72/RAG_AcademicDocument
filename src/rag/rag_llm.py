@@ -2,6 +2,15 @@ import re
 from langchain import hub
 from langchain_core.runnables import RunnablePassthrough
 from langchain_core.output_parsers import StrOutputParser
+from langchain.prompts import PromptTemplate
+
+
+
+template = """<|im_start|>system
+You are an assistant for question-answering tasks. Use the following pieces of retrieved context to answer the question. If you don't know the answer, just say that you don't know. Use three sentences maximum and keep the answer concise.<|im_end|>
+<|im_start|>user
+{question}<|im_end|>
+<|im_start|>assistant"""
 
 class Str_OutputParser(StrOutputParser):
         def __init__(self):
@@ -21,7 +30,8 @@ class Str_OutputParser(StrOutputParser):
 class RagLLM():
         def __init__(self, llm) -> None:
                 self.llm = llm
-                self.prompt = hub.pull("rlm/rag-prompt")
+                #self.prompt = hub.pull("rlm/rag-prompt")
+                self.prompt = self.create_prompt(template)
                 self.str_parser = Str_OutputParser()
 
         def get_chain(self, retriever):
@@ -38,3 +48,7 @@ class RagLLM():
         def format_docs(self, docs):
                 return "\n\n".join(doc.page_content for doc in docs)
         
+        def create_prompt(self, template):
+                prompt = PromptTemplate(template = template, input_variables=["question"])
+                return prompt
+

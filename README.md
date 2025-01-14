@@ -1,6 +1,8 @@
 # RAG with Vistra 7B Instruct-v0.2
 
 This project implements a Retrieval-Augmented Generation (RAG) system using the Vistra 7B language model. The project structure is organized to separate the core logic into reusable components and includes documentation for ease of use and extension.
+<p align="center"> <img width = "100%" height = "100%" src="imgs/image.png"/>  </p>
+
 
 ## 📂 Project Structure
 ```
@@ -36,7 +38,7 @@ pip install -r requirements.txt
 ### 3. Run the application
 The application is built using FastAPI. Use Uvicorn to run the `app.py` file.
 ```bash
-uvicorn app:app --reload
+uvicorn app:app --reload 
 ```
 
 ### 4. Access the API
