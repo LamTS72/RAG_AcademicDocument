@@ -19,11 +19,12 @@ class Str_OutputParser(StrOutputParser):
         def parser(self, text):
                 return self.extract_answer(text)
         
-        def extract_answer(self, text_response,  pattern: str=r"Answer: \s*(.*)"):
+        def extract_answer(self, text_response,  pattern: str=r"(Answer: \s*(.*))|(<\|im_start\|>assistant \s*(.*))"):
                 match = re.search(pattern, text_response, re.DOTALL)
                 if match:
                         answer_text = match.group(1).strip()
-                        return answer_text
+                        end_pattern = r"\n<\|im_end\|>"
+                        return answer_text.replace(end_pattern, "")
                 else:
                         return text_response
 
