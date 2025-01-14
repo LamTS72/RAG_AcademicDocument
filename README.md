@@ -1,12 +1,12 @@
-# RAG with Vistra 7B Instruct-v0.2
+# RAG with Mistral 7B Instruct-v0.2
 
-This project implements a Retrieval-Augmented Generation (RAG) system using the Vistra 7B language model. The project structure is organized to separate the core logic into reusable components and includes documentation for ease of use and extension.
+This project implements a Retrieval-Augmented Generation (RAG) system using the Mistral 7B language model. The project structure is organized to separate the core logic into reusable components and includes documentation for ease of use and extension.
 <p align="center"> <img width = "100%" height = "100%" src="imgs/image.png"/>  </p>
 
 
 ## 📂 Project Structure
 ```
-RAG-Vistra-7B/
+RAG-Mistral-7B/
 ├── docs/              # Contains documentation and related PDF files
 ├── src/               # Core source code
 │   ├── base/          # Base components for the language model
@@ -25,8 +25,8 @@ RAG-Vistra-7B/
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/rag-vistra-7b.git
-cd rag-vistra-7b
+git clone https://github.com/yourusername/rag-Mistral-7b.git
+cd rag-Mistral-7b
 ```
 
 ### 2. Install dependencies
@@ -54,14 +54,14 @@ http://localhost:8000/docs
 ## 🧩 Components Overview
 
 ### `base/`
-- **llm_model.py**: Contains the implementation of the Vistra 7B model wrapper.
+- **llm_model.py**: Contains the implementation of the Mistral 7B model wrapper.
 - **utils.py**: Provides utility functions for tasks such as text pre-processing and logging.
 
 ### `rag/`
 - **file_loader.py**: Handles file input and converts documents into a suitable format for the RAG pipeline.
 - **helper.py**: Contains helper functions used across various RAG modules.
 - **main.py**: The main script to run the RAG pipeline from start to finish.
-- **rag_llm.py**: Integrates the Vistra 7B model with the retrieval process to generate responses.
+- **rag_llm.py**: Integrates the Mistral 7B model with the retrieval process to generate responses.
 - **vector_db.py**: Manages interactions with the vector database, including indexing and querying documents.
 
 ### `app.py`
@@ -70,7 +70,7 @@ This file is the entry point for the FastAPI application. It defines the API rou
 ## 🚀 How to Use
 1. Place your PDF documents in the `docs/` folder.
 2. Run the application using the Uvicorn command.
-3. Use the API to submit queries, and the system will retrieve relevant documents and generate responses using the Vistra 7B model.
+3. Use the API to submit queries, and the system will retrieve relevant documents and generate responses using the Mistral 7B model.
 
 ## 📚 Documentation
 All documentation files are located in the `docs/` folder. Refer to these files for detailed explanations of the system's architecture and usage.
