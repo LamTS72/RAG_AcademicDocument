@@ -7,18 +7,18 @@ This project implements a Retrieval-Augmented Generation (RAG) system using the 
 ## 📂 Project Structure
 ```
 RAG-Mistral-7B/
-├── docs/              # Contains documentation and related PDF files
-├── src/               # Core source code
-│   ├── base/          # Base components for the language model
-│   │   ├── llm_model.py  # Defines the language model wrapper
-│   │   └── utils.py      # Utility functions for general tasks
-│   ├── rag/           # Retrieval-Augmented Generation components
-│       ├── file_loader.py  # Handles loading and processing files
+├── docs/                   # Contains documentation and related PDF files
+├── src/                    # Core source code
+│   ├── base/               # Base components for the language model
+│   │   ├── llm_model.py    # Defines the language model wrapper
+│   │   └── utils.py        # Utility functions for general tasks
+│   ├── rag/                # Retrieval-Augmented Generation components
+│       ├── file_loader.py   # Handles loading and processing files
 │       ├── helper.py       # Helper functions for RAG workflows
 │       ├── main.py         # Entry point for running the RAG pipeline
 │       ├── rag_llm.py      # Defines the RAG logic integrating the LLM and retrieval
 │       └── vector_db.py    # Handles interactions with the vector database
-└── app.py            # Application entry point
+└── app.py                  # Application entry point
 ```
 
 ## 🛠 Setup Instructions
