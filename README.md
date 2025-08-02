@@ -1,6 +1,6 @@
 # RAG with Mistral 7B Instruct-v0.2
 
-This project implements a Retrieval-Augmented Generation (RAG) system using the Mistral 7B language model. The project structure is organized to separate the core logic into reusable components and includes documentation for ease of use and extension.
+This project implements a Retrieval-Augmented Generation (RAG) system using the Mistral 7B language model. The project structure is organized to separate the core logic into reusable components and includes a user-friendly chat interface for interacting with the RAG system.
 <p align="center"> <img width = "100%" height = "100%" src="imgs/image.png"/>  </p>
 
 
@@ -8,6 +8,10 @@ This project implements a Retrieval-Augmented Generation (RAG) system using the 
 ```
 RAG-Mistral-7B/
 ├── docs/                   # Contains documentation and related PDF files
+├── frontend/               # Contains the chat UI files
+│   ├── index.html          # The main HTML file for the chat UI
+│   ├── style.css           # The CSS file for styling the chat UI
+│   └── script.js           # The JavaScript file for the chat UI logic
 ├── src/                    # Core source code
 │   ├── base/               # Base components for the language model
 │   │   ├── llm_model.py    # Defines the language model wrapper
@@ -36,10 +40,15 @@ pip install -r requirements.txt
 ```
 
 ### 3. Run the application
+
+#### Backend
 The application is built using FastAPI. Use Uvicorn to run the `app.py` file.
 ```bash
-uvicorn app:app --reload 
+uvicorn src.app:app --reload 
 ```
+
+#### Frontend
+Open the `frontend/index.html` file in your web browser to interact with the chat UI.
 
 ### 4. Access the API
 Once the application is running, open your browser and navigate to:
@@ -52,6 +61,11 @@ http://localhost:8000/docs
 ```
 
 ## 🧩 Components Overview
+
+### `frontend/`
+- **index.html**: The main HTML file for the chat UI.
+- **style.css**: The CSS file for styling the chat UI.
+- **script.js**: The JavaScript file for the chat UI logic.
 
 ### `base/`
 - **llm_model.py**: Contains the implementation of the Mistral 7B model wrapper.
@@ -70,7 +84,7 @@ This file is the entry point for the FastAPI application. It defines the API rou
 ## 🚀 How to Use
 1. Place your PDF documents in the `docs/` folder.
 2. Run the application using the Uvicorn command.
-3. Use the API to submit queries, and the system will retrieve relevant documents and generate responses using the Mistral 7B model.
+3. Open the `frontend/index.html` file in your web browser to start a conversation.
 
 ## 📚 Documentation
 All documentation files are located in the `docs/` folder. Refer to these files for detailed explanations of the system's architecture and usage.
